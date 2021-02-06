@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" >
+<html class="loading" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <!-- BEGIN: Head-->
 
 <head>

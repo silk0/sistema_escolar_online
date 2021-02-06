@@ -14,13 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/sesion', function () {
     return view('sesion/inicioSesion');
 });
 
-Route::get('Crear Cuenta', function () {
-    return view('sesion/registroSesion');
-});
 
-Route::get('Recuperar Contraseña', function () {
-    return view('sesion/recuperarSesion');
-});
+Route::get('/dashboard', function () {
+    return view('sesion/registroSesion');
+})->middleware(['auth'])->name('sesion/registroSesion');
+
+require __DIR__.'/auth.php';

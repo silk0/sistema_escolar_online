@@ -27,27 +27,28 @@
                                     <p class="px-2">Bienvenido, por favor inicie sesion con su cuenta.</p>
                                     <div class="card-content">
                                         <div class="card-body pt-1">
-                                            <form >
+                                            <form method="POST" action="{{ route('login') }}">
+                                                @csrf
                                                 <fieldset class="form-label-group form-group position-relative has-icon-left">
-                                                    <input type="text" class="form-control" id="user-name" placeholder="Usuario" required>
+                                                    <input type="email" :value="old('email')" name="email" class="form-control" id="email" placeholder="Correo" required>
                                                     <div class="form-control-position">
                                                         <i class="feather icon-user"></i>
                                                     </div>
-                                                    <label for="user-name">Nombre de usuario</label>
+                                                    <label for="email" :value="__('Email')">Correo</label>
                                                 </fieldset>
 
                                                 <fieldset class="form-label-group position-relative has-icon-left">
-                                                    <input type="password" class="form-control" id="user-password" placeholder="Contraseña" required>
+                                                    <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required>
                                                     <div class="form-control-position">
                                                         <i class="feather icon-lock"></i>
                                                     </div>
-                                                    <label for="user-password">Contraseña</label>
+                                                    <label for="password" :value="__('Password')">Contraseña</label>
                                                 </fieldset>
                                                 <div class="form-group d-flex justify-content-between align-items-center">
                                                     <div class="text-left">
                                                         <fieldset class="checkbox">
                                                             <div class="vs-checkbox-con vs-checkbox-primary">
-                                                                <input type="checkbox">
+                                                                <input type="checkbox" name="remember" input id="remember_me">
                                                                 <span class="vs-checkbox">
                                                                     <span class="vs-checkbox--check">
                                                                         <i class="vs-icon feather icon-check"></i>
@@ -57,7 +58,10 @@
                                                             </div>
                                                         </fieldset>
                                                     </div>
-                                                    <div class="text-right"><a href="{{ asset('Recuperar Contraseña') }}" class="card-link">¿Olvido su contraseña?</a></div>
+                                                    @if (Route::has('password.request'))                                                        
+                                                        <div class="text-right"><a href="{{ route('password.request') }}" class="card-link">¿Olvido su contraseña?</a></div>
+                                                    @endif
+                                                    
                                                 </div>
                                                 <a href="{{ asset('Crear Cuenta') }}" class="btn btn-outline-primary float-left btn-inline">Nuevo Registro</a>
                                                 <button type="submit" class="btn btn-primary float-right btn-inline">Iniciar Sesion</button>
