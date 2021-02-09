@@ -14,16 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/sesion', function () {
-    return view('sesion/inicioSesion');
-});
-
+    return view('sesion.inicioSesion');
+})->name('sesion');;
 
 Route::get('/dashboard', function () {
-    return view('sesion/registroSesion');
-})->middleware(['auth'])->name('sesion/registroSesion');
+    return view('dashboard.plantilla');
+})->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';

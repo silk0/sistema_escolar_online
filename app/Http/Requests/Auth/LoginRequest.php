@@ -66,7 +66,7 @@ class LoginRequest extends FormRequest
     public function ensureIsNotRateLimited()
     {
         if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
-            return;
+            return true;
         }
 
         event(new Lockout($this));

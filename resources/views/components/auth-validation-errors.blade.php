@@ -1,15 +1,14 @@
 @props(['errors'])
 
 @if ($errors->any())
-    <div {{ $attributes }}>
-        <div class="font-medium text-red-600">
-            {{ __('Whoops! Something went wrong.') }}
-        </div>
 
-        <ul class="mt-3 list-disc list-inside text-sm text-red-600">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+    <script>
+        $(document).ready(function () {
+            // Fade In / Fade Out
+            toastr.error('@foreach ($errors->all() as $error){{ $error }}@endforeach'
+                ,'¡ ¡ Atencion ! !', 
+            { "showMethod": "fadeIn", "hideMethod": "fadeOut", timeOut: 4500 });           
+            
+        });
+    </script>
 @endif
