@@ -163,7 +163,7 @@
                         //                                                 MINLENGTH
                         // ---------------------------------------------------------
                         if ($this.attr("minlength") !== undefined) {
-                            message = "Demasiado corta: Mínimo de '" + $this.attr("minlength") + "' caracteres<!-- data-validation-minlength-message to override -->";
+                            message = "Demasiado corta: Mínimo debe tener " + $this.attr("minlength") + " caracteres<!-- data-validation-minlength-message to override -->";
                             if ($this.data("validationMinlengthMessage")) {
                                 message = $this.data("validationMinlengthMessage");
                             }

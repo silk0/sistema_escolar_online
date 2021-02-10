@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/sesion');
+        return redirect(RouteServiceProvider::HOME);
     }
 
     /**
@@ -49,7 +49,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/dasboard');
+        return redirect(RouteServiceProvider::HOME);
     }
 
     

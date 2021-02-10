@@ -25,10 +25,11 @@
 
         <div class="content-wrapper">
             <div class="content-header row">
+                @yield('contenedor-header')
             </div>
             <div class="content-body">
                 <!-- Dashboard Starts -->
-                    @yield('contenedor')
+                @yield('contenedor-body')
                 <!-- Dashboard Ends -->
             </div>
         </div>
@@ -43,6 +44,7 @@
     <!-- BEGIN: Footer-->
     @include('dashboard.footer')
     <!-- END: Footer--> 
+    @stack('scripts')
 
 </body>
 <!-- END: Body-->

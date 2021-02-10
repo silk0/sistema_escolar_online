@@ -4,6 +4,10 @@
 <title>Registro de Usuario - Sistema Escolar Online</title>
 @endsection
 
+@section('footer')
+<script src="{{ asset('js/registro_cuenta.js') }}"></script>
+@endsection
+
 @section('contenedor')
 <div class="app-content content">
     <div class="content-wrapper">
@@ -28,7 +32,7 @@
                                     <div class="card-content">
                                         <div class="card-body pt-0">
                                             <x-auth-validation-errors class="mb-4" :errors="$errors" /> 
-                                            <form method="POST" action="{{ route('register') }}" novalidate>
+                                            <form id="registrarCuentaF" method="POST" action="{{ route('register') }}" novalidate>
                                                 @csrf
                                                 <div class="form-label-group form-group">
                                                     <div class="controls">
@@ -60,7 +64,7 @@
                                                     <label for="password_confirmation" :value="__('Confirm Password')">Confirmar Contraseña</label>
                                                 </div>
                                                 <a href="{{ asset('/') }}" class="btn btn-outline-primary float-left btn-inline mb-50">Sesion</a>
-                                                <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Registrar</a>
+                                                <button type="submit" id="registrarCuentaB"  name="registrarCuentaB" class="btn btn-primary float-right btn-inline mb-50">Registrar</a>
                                             </form>
                                         </div>
                                     </div>

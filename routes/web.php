@@ -15,11 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('sesion.inicioSesion');
-})->name('sesion');;
+})
+->middleware('guest')
+->name('sesion');
 
 Route::get('/dashboard', function () {
     return view('dashboard.plantilla');
-})->middleware(['auth'])->name('dashboard');
+})
+->middleware(['auth'])
+->name('dashboard');
 
+Route::get('/dashboard/usuarios', function () {
+    return view('vistas.administrar_usuarios');
+})
+->middleware(['auth'])
+->name('usuarios');
 
 require __DIR__.'/auth.php';
