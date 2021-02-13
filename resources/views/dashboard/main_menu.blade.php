@@ -19,9 +19,9 @@
                     </li>
                 </ul>
             </li>
-            <li class=" navigation-header"><span>Administracion</span>
+            <li class=" navigation-header"><span>Administracion</span>                
             </li>
-            <li class="active" class=" nav-item"><a href="#"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email">Usuarios</span></a>
+            <li @yield('usuarios') class=" nav-item"><a href="{{ route('usuarios') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Email">Usuarios</span></a>
             </li>
             <li class=" nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Ecommerce">Item</span></a>
                 <ul class="menu-content">

@@ -24,6 +24,6 @@
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+    @stack('css')
     <!-- END: Custom CSS-->
-
 </head>

@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
 ->middleware(['auth'])
 ->name('dashboard');
 
-Route::get('/dashboard/usuarios', function () {
+Route::get('/usuarios', function () {
     return view('vistas.administrar_usuarios');
 })
 ->middleware(['auth'])
