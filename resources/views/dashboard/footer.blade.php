@@ -4,7 +4,7 @@
         COPYRIGHT &copy; 2019<a class="text-bold-800 grey darken-2"
          href="#" 
          target="_blank">Juan Trejo - Company,</a>Reservados todos los derechos.</span>
-        <span class="float-md-right d-none d-md-block">Hecho a mano y hecho con
+        <span class="float-md-right d-none d-md-block">Hecho a mano y con
             <i class="feather icon-heart pink"></i>
         </span>
         <button class="btn btn-primary btn-icon scroll-top" type="button">
@@ -12,6 +12,7 @@
         </button>
     </p>
 </footer>
+
 
 <!-- BEGIN: Vendor JS-->
 <script src="{{ asset('app-assets/vendors/js/vendors.min.js') }}"></script>
@@ -22,7 +23,8 @@
 
 <!-- BEGIN: Theme JS-->
 <script src="{{ asset('app-assets/js/core/app-menu.js') }}"></script>
-<script src="{{ asset('app-assets/js/core/app.js') }}"></script>
+<script src="{{ asset('app-assets/js/core/app.js') }}"></script>}
+<script src="{{ asset('app-assets/js/scripts/components.js') }}"></script>
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->

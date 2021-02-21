@@ -11,28 +11,35 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-warning badge-pill float-right mr-2">2</span></a>
+            <li class="nav-item" ><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-warning badge-pill float-right mr-2">2</span></a>
                 <ul class="menu-content">
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Analytics">Analytics</span></a>
+                    <li @yield('inicio')><a href="dashboard-analytics.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Analytics">Analytics</span></a>
                     </li>
-                    <li ><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
+                    <li><a href="dashboard-ecommerce.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
                     </li>
                 </ul>
             </li>
-            <li class=" navigation-header"><span>Administracion</span>                
+            <li class=" navigation-header"><span>Apps</span>
             </li>
-            <li @yield('usuarios') class=" nav-item"><a href="{{ route('usuarios') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Email">Usuarios</span></a>
+            <li class=" nav-item @yield('usuario')" ><a href="{{ route('usuarios') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Email">Usuarios</span></a>
             </li>
-            <li class=" nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Ecommerce">Item</span></a>
+            <li class=" nav-item"><a href="app-chat.html"><i class="feather icon-message-square"></i><span class="menu-title" data-i18n="Chat">Chat</span></a>
+            </li>
+            <li class=" nav-item"><a href="app-todo.html"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Todo</span></a>
+            </li>
+            <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Calender</span></a>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Ecommerce">Ecommerce</span></a>
                 <ul class="menu-content">
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">Sub item</span></a>
+                    <li><a href="app-ecommerce-shop.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">Shop</span></a>
                     </li>
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Wish List">Sub item</span></a>
+                    <li><a href="app-ecommerce-wishlist.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Wish List">Wish List</span></a>
                     </li>
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Checkout">Sub item</span></a>
+                    <li><a href="app-ecommerce-checkout.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Checkout">Checkout</span></a>
                     </li>
                 </ul>
             </li>
+            
         </ul>
     </div>
 </div>

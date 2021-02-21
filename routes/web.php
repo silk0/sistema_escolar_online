@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Page\ControlPagina;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('sesion.inicioSesion');
-})
+Route::get('/', [ControlPagina::class, 'inicio'])
 ->middleware('guest')
 ->name('sesion');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.plantilla');
-})
+Route::get('/dashboard',[ControlPagina::class, 'plantilla'])
 ->middleware(['auth'])
 ->name('dashboard');
 
-Route::get('/usuarios', function () {
-    return view('vistas.administrar_usuarios');
-})
+Route::get('/usuarios',[ControlPagina::class, 'admonUser'])
 ->middleware(['auth'])
 ->name('usuarios');
 

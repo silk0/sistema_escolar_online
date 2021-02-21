@@ -34,10 +34,14 @@
                                             <x-auth-validation-errors class="mb-4" :errors="$errors" /> 
                                             <form id="registrarCuentaF" method="POST" action="{{ route('register') }}" novalidate>
                                                 @csrf
+                                                
                                                 <div class="form-label-group form-group">
                                                     <div class="controls">
-                                                        <input type="text" id="name" name="name" :value="old('name')" class="form-control" placeholder="Nombre Completo" required 
-                                                        data-validation-required-message="El campo de nombre completo es obligatorio">
+                                                        <input type="text" id="name" name="name" :value="old('name')"
+                                                         class="form-control" placeholder="Nombre Completo" required 
+                                                        data-validation-required-message="El campo de 
+                                                        nombre completo es obligatorio">
+                                                        <input type="text" id="nivel" name="nivel" value="admin" disabled>
                                                     </div>
                                                     <label for="name" :value="__('Name')" >Nombre Completo</label>
                                                 </div>

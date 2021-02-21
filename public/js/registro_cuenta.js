@@ -5,8 +5,8 @@ $(document).ready(function () {
 
         $.ajax({
             type: $(this).attr("method"),
-            url: $(this).attr("action"),
-            data:$(this).serialize(),
+            url:  $(this).attr("action"),
+            data: $(this).serialize(),
             beforeSend: function(){
                 /*
                 * Esta función se ejecuta durante el envió de la petición al
@@ -31,45 +31,49 @@ $(document).ready(function () {
                { "showMethod": "fadeIn", "hideMethod": "fadeOut", timeOut: 3500 }); 
 
                 setTimeout(function() {
-                window.location="{{ route('/dashboard') }}";
+                window.location="{{ asset('/dashboard') }}";
                
               }, 4500);
               
                 
             },
-            error: function( jqXHR, textStatus, errorThrown ) {
-                
+            error: function( jqXHR, textStatus, errorThrown, data ) {
+                $mensaje = null;
                 if (jqXHR.status === 0) {
       
-                  alert('Not connect: Verify Network.');
+                 $mensaje = 'Not connect: Verify Network.';
       
                 } else if (jqXHR.status == 404) {
       
-                  alert('Requested page not found [404]');
+                 $mensaje = 'Requested page not found [404]';
       
                 } else if (jqXHR.status == 500) {
       
-                  alert('Internal Server Error [500].');
+                 $mensaje = 'Internal Server Error [500].';
+                 toastr.info(this, 'Informacion',
+                            { "showMethod": "fadeIn", "hideMethod": "fadeOut", timeOut: 4500 });
       
                 } else if (textStatus === 'parsererror') {
       
-                  alert('Requested JSON parse failed.');
+                 $mensaje = 'Requested JSON parse failed.';
       
                 } else if (textStatus === 'timeout') {
       
-                  alert('Time out error.');
+                  $mensaje = 'Time out error.';
       
                 } else if (textStatus === 'abort') {
       
-                  alert('Ajax request aborted.');
+                  $mensaje ='Ajax request aborted.';
       
                 } else {
                     var o = $.parseJSON(jqXHR.responseText);
-                    toastr.error(o.message, o.errors.email[0],
-                            { "showMethod": "fadeIn", "hideMethod": "fadeOut", timeOut: 4500 });
-                    
-                }               
-      
+                    toastr.error(o.message, 'error',
+                            { "showMethod": "fadeIn", "hideMethod": "fadeOut", timeOut: 4500 });                    
+                }  
+                
+                if($mensaje!=null)
+                  toastr.error($mensaje, '',
+                      { "showMethod": "fadeIn", "hideMethod": "fadeOut", timeOut: 4500 });      
             }             
         
         });

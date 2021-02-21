@@ -39,13 +39,13 @@
                                                 
                                                 <fieldset class="form-label-group form-group position-relative has-icon-left">
                                                     <div class="controls">
-                                                        <input type="email" :value="old('email')"  name="email" class="form-control" id="email" placeholder="Correo" 
-                                                        required  data-validation-required-message="El campo de correo electrónico es obligatorio">
+                                                        <input type="text" :value="old('name')"  name="name" class="form-control" id="name" placeholder="Usuario" 
+                                                        required  data-validation-required-message="El campo de usuario es obligatorio">
                                                         <div class="form-control-position ">
                                                             <i class="feather icon-user"></i>
                                                         </div>
                                                     </div>
-                                                    <label for="email" :value="__('Email')">Correo</label>
+                                                    <label for="name" :value="__('Name')">Usuario</label>
                                                     
                                                 </fieldset>                                                
 

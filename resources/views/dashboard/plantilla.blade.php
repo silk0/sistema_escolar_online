@@ -45,7 +45,6 @@
     @include('dashboard.footer')
     <!-- END: Footer--> 
     @stack('scripts')
-
 </body>
 <!-- END: Body-->
 
