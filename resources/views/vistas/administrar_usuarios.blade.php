@@ -148,11 +148,6 @@ active
 <!--/ Add rows table -->
 @endsection
 
-@section('modalNuevoUsuario')
-
-
-@endsection
-
 @section('modalEditarUsuario')
 <div class="card rounded-0 mb-0 p-2">
     <div class="card-header pt-50 pb-1">

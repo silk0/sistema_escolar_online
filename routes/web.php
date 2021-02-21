@@ -26,4 +26,8 @@ Route::get('/usuarios',[ControlPagina::class, 'admonUser'])
 ->middleware(['auth'])
 ->name('usuarios');
 
+Route::get('/perfil',[ControlPagina::class, 'perfil'])
+->middleware(['auth'])
+->name('perfil');
+
 require __DIR__.'/auth.php';

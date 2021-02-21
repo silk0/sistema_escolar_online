@@ -16,6 +16,10 @@ class ControlPagina extends Controller
         return view('dashboard.plantilla');
     }
 
+    public function perfil() {
+        return view('vistas.perfil');
+    }
+
     public function admonUser () {
         $usuarios = App\Models\User::all();
         return view('vistas.administrar_usuarios',compact('usuarios'));
