@@ -33,4 +33,21 @@ class CreateFailedJobsTable extends Migration
     {
         Schema::dropIfExists('failed_jobs');
     }
+    /*
+    
+    datos_personales_users
+    $table->unsignedBigInteger('users_id')->unique();
+    $table->unsignedBigInteger('datos_personales_id')->unique();            
+    $table->Integer('estado');
+    $table->foreign('users_id')->references('id')->on('users');            
+    $table->foreign('datos_personales_id')->references('id')->on('datos_personales');
+    
+    datos_personales
+    $table->binary('foto');
+    $table->string('primer_nombre');
+    $table->string('segundo_nombre');
+    $table->string('tercer_nombre');
+    $table->string('primer_apellido');
+    $table->string('segundo_apellido');
+    $table->string('tercer_apellido');*/
 }
